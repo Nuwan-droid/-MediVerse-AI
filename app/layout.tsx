@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Plus Jakarta Sans — closest free alternative to Proxima Nova (used by Healthline).
+// Clean, geometric, modern sans-serif. Loaded via next/font for zero layout shift.
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -14,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mediverse ",
+  title: "Mediverse — Everything about health in one place",
   description: "Trusted information, smart tools, and personalized guidance for a healthier you.",
 };
 
@@ -26,9 +30,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-50">
+      <body className="min-h-full flex flex-col bg-slate-50 font-sans">
         <Navbar />
         <main className="flex-1 flex flex-col">
           {children}

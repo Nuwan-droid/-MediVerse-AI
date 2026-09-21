@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { HeartPulse, Search, ChevronDown, Menu, X } from "lucide-react";
+import { Activity, Search, ChevronDown, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Navbar() {
@@ -35,7 +35,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <div className="bg-emerald-400 p-1.5 rounded-full">
-            <HeartPulse className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+            <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-white stroke-[2.5]" />
           </div>
           <span className="text-lg sm:text-xl font-bold leading-none tracking-tight text-slate-800">
             Mediverse
@@ -43,7 +43,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Links — hidden below lg */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-bold text-slate-600 flex-1 mx-4">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-bold text-slate-600 flex-1 ml-8 lg:ml-12 xl:ml-16 mr-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}

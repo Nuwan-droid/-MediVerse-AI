@@ -1,22 +1,22 @@
-import { ShieldCheck, Leaf, Users, HeartPulse } from "lucide-react";
+import { Stethoscope, Activity, HeartHandshake, HeartPulse } from "lucide-react";
 
 const features = [
   {
     title: "Reliable Information",
     description: "Verified by healthcare professionals and trusted sources.",
-    icon: <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />,
+    icon: <Stethoscope className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />,
     bg: "bg-blue-100",
   },
   {
     title: "Better Lifestyle",
     description: "Small changes. Big improvements in your health.",
-    icon: <Leaf className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />,
+    icon: <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />,
     bg: "bg-green-100",
   },
   {
     title: "For Everyone",
     description: "Accessible, easy to use, and made for your journey.",
-    icon: <Users className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600" />,
+    icon: <HeartHandshake className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600" />,
     bg: "bg-purple-100",
   },
   {

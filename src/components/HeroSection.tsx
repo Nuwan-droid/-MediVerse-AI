@@ -33,9 +33,10 @@ export function HeroSection() {
       {/* ── Background Image ─────────────────────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-bg.jpg"
+          src="/hero-bg.jpeg"
           alt="Healthy lifestyle background"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />
@@ -44,27 +45,24 @@ export function HeroSection() {
       {/* ── LEFT CONTENT ─────────────────────────────────── */}
       {/*
         Layout rules:
-        - mobile/sm : full width, no right padding (card is hidden)
-        - md        : 60% width to give space for (still no card)
-        - lg        : ~60% width, right card appears
-        - xl        : 55% width, right card wider
+        - mobile/sm : full width, starts near left edge
+        - md+       : limited width, card-aware
+        No centered container — content hugs the left side
       */}
-      <div
-        className={`
-          container relative z-10 mx-auto flex items-center h-full
-          px-4 sm:px-6 lg:px-8 xl:px-10
-          max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-7xl xl:max-w-7xl
-        `}
-      >
+      <div className="relative z-10 w-full flex items-center h-full
+        pl-14 sm:pl-24 md:pl-28 lg:pl-32 xl:pl-36 2xl:pl-40
+        pr-4 sm:pr-6
+        py-8 sm:py-10 md:py-12
+      ">
         <div
           className={`
             flex flex-col min-w-0
             gap-3 sm:gap-4 md:gap-5 lg:gap-5 xl:gap-6
             w-full           /* mobile  : full width */
             md:w-[65%]       /* md      : more room  */
-            lg:w-[62%]       /* lg      : card appears right */
-            xl:w-[60%]       /* xl      : wider left */
-            2xl:w-[58%]      /* 2xl     : balanced   */
+            lg:w-[60%]       /* lg      : card appears right */
+            xl:w-[58%]       /* xl      : wider left */
+            2xl:w-[55%]      /* 2xl     : balanced   */
           `}
         >
           {/* ── Badge ── */}
@@ -101,29 +99,35 @@ export function HeroSection() {
             Trusted information, smart tools, and personalized guidance for a healthier you.
           </p>
 
-          {/* ── Search Bar ── */}
-          <div className="relative w-full">
+          {/* ── Search Bar ── constrained width at lg+ */}
+          <div className="relative
+            w-full           /* mobile–md : full width of container */
+            lg:w-[90%]       /* lg        : slightly narrower       */
+            xl:w-[85%]       /* xl        : more reduced            */
+            2xl:w-[80%]      /* 2xl       : balanced                */
+          ">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 sm:pl-4 pointer-events-none">
-              <Search className="h-4 w-4 sm:h-4.5 sm:w-4.5 md:h-5 md:w-5 text-gray-400" />
+              <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
             </div>
             <Input
               type="text"
               placeholder="Search diseases, symptoms, medicines..."
               className="
                 w-full rounded-full bg-white text-gray-900 shadow-xl border-0
-                pl-9 pr-12 py-4            /* mobile  */
-                sm:pl-11 sm:pr-14 sm:py-5  /* sm      */
-                md:pl-12 md:pr-16 md:py-6  /* md      */
-                lg:py-7                    /* lg+     */
-                text-sm sm:text-sm md:text-base
+                pl-9 pr-12 py-3.5       /* mobile  */
+                sm:pl-11 sm:pr-14 sm:py-5  /* sm   */
+                md:pl-12 md:pr-16 md:py-6  /* md   */
+                lg:py-6                    /* lg   */
+                xl:py-7                    /* xl   */
+                text-sm md:text-base
               "
             />
             <div className="absolute inset-y-0 right-1.5 sm:right-2 flex items-center">
               <Button className="
                 rounded-full p-0 bg-blue-600 hover:bg-blue-700
-                h-7 w-7    /* mobile  */
-                sm:h-9 sm:w-9
-                md:h-10 md:w-10
+                h-7 w-7        /* mobile  */
+                sm:h-9 sm:w-9  /* sm      */
+                md:h-10 md:w-10 /* md+    */
               ">
                 <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
               </Button>
@@ -166,9 +170,9 @@ export function HeroSection() {
       */}
       <div className="
         hidden
-        lg:block lg:absolute lg:right-4 lg:z-10 lg:w-[270px]
-        xl:right-8 xl:w-[300px]
-        2xl:right-12 2xl:w-[320px]
+        lg:block lg:absolute lg:right-8 lg:z-10 lg:w-[270px]
+        xl:right-14 xl:w-[300px]
+        2xl:right-20 2xl:w-[320px]
       ">
         <Card className="
           rounded-3xl shadow-2xl bg-white/95 backdrop-blur border-0
