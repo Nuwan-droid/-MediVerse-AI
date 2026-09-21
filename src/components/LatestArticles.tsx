@@ -12,8 +12,8 @@ const articles = [
     image: "/article-nutrition-v2.jpg",
     readTime: "5 min read",
     date: "Apr 28, 2026",
-    color: "from-[#02443a] from-40% via-[#02443a]/90 via-55%", // Solid dark teal/green
-    pillBg: "bg-[#98f2c2] text-[#02443a]", // Solid light green
+    color: "from-[#02443a] from-40% via-[#02443a]/90 via-55%", 
+    pillBg: "bg-[#98f2c2] text-[#02443a]", 
     arrowColor: "text-[#02443a]",
   },
   {
@@ -24,7 +24,7 @@ const articles = [
     image: "/article-diabetes-v2.jpg",
     readTime: "4 min read",
     date: "Apr 26, 2026",
-    color: "from-[#0a3962] from-40% via-[#0a3962]/90 via-55%", // Solid dark blue
+    color: "from-[#0a3962] from-40% via-[#0a3962]/90 via-55%", 
     pillBg: "bg-[#93c5fd] text-[#0a3962]",
     arrowColor: "text-[#0a3962]",
   },
@@ -36,7 +36,7 @@ const articles = [
     image: "/article-exercise-v2.jpg",
     readTime: "6 min read",
     date: "Apr 20, 2026",
-    color: "from-[#452866] from-40% via-[#452866]/90 via-55%", // Solid dark purple
+    color: "from-[#452866] from-40% via-[#452866]/90 via-55%", 
     pillBg: "bg-[#d8b4fe] text-[#452866]",
     arrowColor: "text-[#452866]",
   },
@@ -48,7 +48,7 @@ const articles = [
     image: "/article-research-v2.jpg",
     readTime: "7 min read",
     date: "Apr 18, 2026",
-    color: "from-[#0c565d] from-40% via-[#0c565d]/90 via-55%", // Solid dark teal
+    color: "from-[#0c565d] from-40% via-[#0c565d]/90 via-55%",
     pillBg: "bg-[#99f6e4] text-[#0c565d]",
     arrowColor: "text-[#0c565d]",
   },

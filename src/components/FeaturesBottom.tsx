@@ -32,9 +32,9 @@ export function FeaturesBottom() {
     <section className="py-8 sm:py-10 md:py-12 bg-white">
       <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/*
-          Mobile: 1 column (stacked)
+          Mobile: 1 column 
           sm: 2 columns
-          lg: 4 columns (all in one row)
+          lg: 4 columns 
         */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature, i) => (

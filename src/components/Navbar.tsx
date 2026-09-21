@@ -31,8 +31,9 @@ export function Navbar() {
         {/* Logo */}
         <div className="flex flex-1 justify-start">
           <Link href="/" className="flex items-center shrink-0">
-            <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900">
-              <span className="text-blue-400">M</span>ediVerse AI<span className="text-blue-400 text-3xl leading-[0]">.</span>
+            <span className="text-xl sm:text-2xl tracking-tight">
+              <span className="font-extrabold text-blue-950">Good</span>{" "}
+              <span className="font-bold text-teal-500">for Health</span>
             </span>
           </Link>
         </div>

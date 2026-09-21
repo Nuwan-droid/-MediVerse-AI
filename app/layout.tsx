@@ -3,8 +3,6 @@ import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
-// Plus Jakarta Sans — closest free alternative to Proxima Nova (used by Healthline).
-// Clean, geometric, modern sans-serif. Loaded via next/font for zero layout shift.
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
