@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { Search, HeartPulse, Brain, Wrench, Sparkles, FileText, ChevronRight } from "lucide-react";
+import { Search, HeartPulse, Brain, ClipboardList, Bot, Stethoscope, ChevronRight } from "lucide-react";
 
 // 📚 Learning Note — Responsive Design with Tailwind:
 // We use breakpoint prefixes (no prefix = mobile-first default):
@@ -12,9 +12,9 @@ import { Search, HeartPulse, Brain, Wrench, Sparkles, FileText, ChevronRight } f
 const featureItems = [
   { icon: <Brain className="h-4 w-4 xl:h-5 xl:w-5 text-blue-600" />,    bg: "bg-blue-100 group-hover:bg-blue-200",    title: "Your Health, Smarter",    desc: "Get personalized health advice and feel better." },
   { icon: <HeartPulse className="h-4 w-4 xl:h-5 xl:w-5 text-emerald-600" />, bg: "bg-emerald-100 group-hover:bg-emerald-200", title: "Understand Your Health", desc: "Learn about conditions, symptoms, and medicines." },
-  { icon: <Wrench className="h-4 w-4 xl:h-5 xl:w-5 text-amber-600" />,   bg: "bg-amber-100 group-hover:bg-amber-200",  title: "Use Smart Tools",         desc: "Calculators, trackers, and plans for your goals." },
-  { icon: <Sparkles className="h-4 w-4 xl:h-5 xl:w-5 text-purple-600" />,bg: "bg-purple-100 group-hover:bg-purple-200",title: "Get AI Guidance",         desc: "Ask questions and get personalized answers." },
-  { icon: <FileText className="h-4 w-4 xl:h-5 xl:w-5 text-orange-600" />,bg: "bg-orange-100 group-hover:bg-orange-200",title: "Stay Connected",          desc: "Find doctors, articles and trusted resources." },
+  { icon: <ClipboardList className="h-4 w-4 xl:h-5 xl:w-5 text-amber-600" />,bg: "bg-amber-100 group-hover:bg-amber-200",  title: "Use Smart Tools",         desc: "Calculators, trackers, and plans for your goals." },
+  { icon: <Bot className="h-4 w-4 xl:h-5 xl:w-5 text-purple-600" />,      bg: "bg-purple-100 group-hover:bg-purple-200",title: "Get AI Guidance",         desc: "Ask questions and get personalized answers." },
+  { icon: <Stethoscope className="h-4 w-4 xl:h-5 xl:w-5 text-orange-600" />, bg: "bg-orange-100 group-hover:bg-orange-200",title: "Stay Connected",          desc: "Find doctors, articles and trusted resources." },
 ];
 
 export function HeroSection() {
