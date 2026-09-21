@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Activity, Search, ChevronDown, Menu, X } from "lucide-react";
+import { Search, ChevronDown, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Navbar() {
@@ -20,11 +20,7 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/", active: true },
-    { label: "Health Library", href: "/health-library" },
-    { label: "Tools", href: "/tools" },
-    { label: "AI Assistant", href: "/ai-assistant" },
-    { label: "Doctors", href: "/doctors" },
-    { label: "Health Goals", href: "/health-goals" },
+    { label: "Articles", href: "/articles" },
     { label: "News", href: "/news" },
   ];
 
@@ -33,17 +29,16 @@ export function Navbar() {
       <div className="flex h-16 items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="bg-emerald-400 p-1.5 rounded-full">
-            <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-white stroke-[2.5]" />
-          </div>
-          <span className="text-lg sm:text-xl font-bold leading-none tracking-tight text-slate-800">
-            Mediverse
-          </span>
-        </Link>
+        <div className="flex flex-1 justify-start">
+          <Link href="/" className="flex items-center shrink-0">
+            <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900">
+              <span className="text-blue-400">M</span>ediVerse AI<span className="text-blue-400 text-3xl leading-[0]">.</span>
+            </span>
+          </Link>
+        </div>
 
         {/* Desktop Links — hidden below lg */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-bold text-slate-600 flex-1 ml-8 lg:ml-12 xl:ml-16 mr-4">
+        <div className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 text-sm font-bold text-slate-600">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -53,13 +48,10 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <button className="flex items-center gap-1 whitespace-nowrap hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors">
-            More <ChevronDown className="h-4 w-4" />
-          </button>
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-2 ml-auto">
+        <div className="flex flex-1 items-center justify-end gap-2">
           {/* Search icon — always visible */}
           <button className="p-2 hover:bg-slate-100 rounded-full transition-colors">
             <Search className="h-5 w-5 text-slate-600" />
