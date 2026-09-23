@@ -1,57 +1,80 @@
-import { Stethoscope, Activity, HeartHandshake, HeartPulse } from "lucide-react";
+import {
+  ShieldCheck,
+  Leaf,
+  Users,
+  HeartPulse,
+} from "lucide-react";
 
 const features = [
   {
     title: "Reliable Information",
     description: "Verified by healthcare professionals and trusted sources.",
-    icon: <Stethoscope className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />,
+    icon: ShieldCheck,
     bg: "bg-blue-100",
+    color: "text-blue-500",
   },
   {
     title: "Better Lifestyle",
     description: "Small changes. Big improvements in your health.",
-    icon: <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />,
+    icon: Leaf,
     bg: "bg-green-100",
+    color: "text-green-500",
   },
   {
     title: "For Everyone",
     description: "Accessible, easy to use, and made for your journey.",
-    icon: <HeartHandshake className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600" />,
+    icon: Users,
     bg: "bg-purple-100",
+    color: "text-purple-500",
   },
   {
     title: "A Healthier Tomorrow",
     description: "Because your health matters. Today and always.",
-    icon: <HeartPulse className="h-5 w-5 sm:h-6 sm:w-6 text-teal-600" />,
+    icon: HeartPulse,
     bg: "bg-teal-100",
+    color: "text-teal-500",
   },
 ];
 
 export function FeaturesBottom() {
   return (
-    <section className="py-8 sm:py-10 md:py-12 bg-white">
-      <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        {/*
-          Mobile: 1 column 
-          sm: 2 columns
-          lg: 4 columns 
-        */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-          {features.map((feature, i) => (
+    <section className="relative w-full overflow-hidden bg-slate-50">
+      <div className="relative z-10 mx-auto grid max-w-[1500px] grid-cols-1 gap-6 px-6 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-12">
+        {features.map((feature) => {
+          const Icon = feature.icon;
+
+          return (
             <div
-              key={i}
-              className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl hover:bg-slate-50 transition-colors"
+              key={feature.title}
+              className="flex items-start gap-4 border-b border-slate-200 pb-5 last:border-0 sm:border-b-0 lg:border-r lg:px-6 lg:last:border-r-0"
             >
-              <div className={`${feature.bg} p-2.5 sm:p-3 rounded-full shrink-0`}>
-                {feature.icon}
+              <div
+                className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${feature.bg}`}
+              >
+                <Icon className={`h-6 w-6 ${feature.color}`} />
               </div>
+
               <div>
-                <h4 className="font-bold text-slate-800 text-sm mb-1">{feature.title}</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">{feature.description}</p>
+                <h3 className="text-sm font-bold text-blue-950">
+                  {feature.title}
+                </h3>
+
+                <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                  {feature.description}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
+
+      {/* Decorative bottom wave */}
+      <div className="relative h-10 overflow-hidden">
+        <div className="absolute -bottom-7 left-[-5%] h-14 w-[45%] -rotate-6 rounded-[50%] bg-teal-200/70" />
+        <div className="absolute -bottom-8 left-[-8%] h-12 w-[38%] -rotate-6 rounded-[50%] bg-teal-400/60" />
+
+        <div className="absolute -bottom-7 right-[-5%] h-14 w-[45%] rotate-6 rounded-[50%] bg-teal-200/70" />
+        <div className="absolute -bottom-8 right-[-8%] h-12 w-[38%] rotate-6 rounded-[50%] bg-teal-400/60" />
       </div>
     </section>
   );
