@@ -1,116 +1,197 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, HeartPulse, Brain, ClipboardList, Bot, Stethoscope, ChevronRight } from "lucide-react";
-
+import {
+  Search,
+  ChevronRight,
+  Heart,
+  Brain,
+  Wrench,
+  Users,
+  MessageCircle,
+} from "lucide-react";
 
 export function HeroSection() {
+  const features = [
+    {
+      title: "Your Health, Smarter",
+      description:
+        "Get personalized health advice, track your progress, and feel better.",
+      icon: Brain,
+      bg: "bg-blue-100",
+      iconColor: "text-blue-600",
+    },
+    {
+      title: "Understand Your Health",
+      description:
+        "Learn about conditions, symptoms, medicines, and more.",
+      icon: Heart,
+      bg: "bg-green-100",
+      iconColor: "text-green-600",
+    },
+    {
+      title: "Use Smart Tools",
+      description:
+        "Calculators, trackers, and plans to reach your goals.",
+      icon: Wrench,
+      bg: "bg-orange-100",
+      iconColor: "text-orange-500",
+    },
+    {
+      title: "Get AI Guidance",
+      description:
+        "Ask questions and get personalized answers.",
+      icon: Users,
+      bg: "bg-purple-100",
+      iconColor: "text-purple-600",
+    },
+    {
+      title: "Stay Connected",
+      description:
+        "Find doctors, health articles, and trusted resources.",
+      icon: MessageCircle,
+      bg: "bg-orange-100",
+      iconColor: "text-orange-500",
+    },
+  ];
+
+  const popularSearches = [
+    "Diabetes",
+    "Headache",
+    "BMI Calculator",
+    "Vitamin D",
+    "Healthy Recipes",
+  ];
+
   return (
-    <section
-      className={`
-        relative w-full flex items-center overflow-hidden
-        h-[480px]          /* mobile  <640px  — compact height    */
-        sm:h-[520px]       /* sm      640px+  — slightly taller   */
-        md:h-[560px]       /* md      768px+  — tablet height      */
-        lg:h-[600px]       /* lg      1024px+ — desktop standard   */
-        xl:h-[640px]       /* xl      1280px+ — large desktop      */
-        2xl:h-[680px]      /* 2xl     1536px+ — ultra-wide         */
-      `}
-    >
-      {/* ── Background Image ─────────────────────────────── */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative h-[270px] w-full overflow-hidden sm:h-[285px] lg:h-[300px]">
+      {/* Background image */}
+      <div className="absolute inset-0">
         <Image
           src="/hero-bg.jpeg"
-          alt="Healthy lifestyle background"
+          alt="Healthy lifestyle"
           fill
-          sizes="100vw"
-          className="object-cover object-center"
           priority
+          sizes="100vw"
+          className="object-cover object-[center_45%]"
         />
+
+        <div className="absolute inset-0 bg-white/5" />
       </div>
 
-      {/* ── LEFT CONTENT ─────────────────────────────────── */}
-   
-      <div className="relative z-10 w-full flex items-center h-full
-        pl-14 sm:pl-24 md:pl-28 lg:pl-32 xl:pl-36 2xl:pl-40
-        pr-4 sm:pr-6
-        py-8 sm:py-10 md:py-12
-      ">
-        <div
-          className={`
-            flex flex-col min-w-0
-            gap-3 sm:gap-4 md:gap-5 lg:gap-5 xl:gap-6
-            w-full           /* mobile  : full width */
-            md:w-[65%]       /* md      : more room  */
-            lg:w-[60%]       /* lg      : card appears right */
-            xl:w-[58%]       /* xl      : wider left */
-            2xl:w-[55%]      /* 2xl     : balanced   */
-          `}
-        >
-          {/* ── Headline ── */}
-          <h1 className="
-            font-extrabold tracking-tight leading-[1.1] text-teal-900
-            text-2xl          /* mobile  */
-            sm:text-3xl       /* sm      */
-            md:text-4xl       /* md      */
-            lg:text-5xl       /* lg      */
-            xl:text-[3.5rem]  /* xl      */
-            2xl:text-6xl      /* 2xl     */
-          ">
-            Everything about health
+      {/* Hero content */}
+      <div className="relative z-10 mx-auto h-full max-w-[1200px] px-6 lg:px-8">
+
+        {/* Left side */}
+        <div className="w-full pt-5 sm:pt-6 lg:w-[58%]">
+
+          {/* Badge */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-md">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100">
+              <Heart className="h-3 w-3 fill-blue-600 text-blue-600" />
+            </span>
+
+            <span className="text-[9px] font-bold text-blue-600 sm:text-[10px]">
+              Your Health, Our Priority
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="max-w-[590px] text-[32px] font-extrabold leading-[0.98] tracking-tight text-blue-950 sm:text-[36px] lg:text-[40px]">
+            Everything about health,
             <br />
-            <span className="text-emerald-600">in one place.</span>
+            <span className="text-teal-500">
+              in one place.
+            </span>
           </h1>
 
-          {/* ── Subheading — hidden on mobile to save vertical space ── */}
-          <p className="
-            hidden font-medium text-slate-600 leading-relaxed
-            sm:block sm:text-sm
-            md:text-base
-            lg:text-lg
-            xl:text-xl
-          ">
-            Trusted information, smart tools, and personalized guidance for a healthier you.
+          {/* Description */}
+          <p className="mt-2 max-w-[520px] text-[11px] leading-[1.25] text-blue-950 sm:text-xs lg:text-sm">
+            Trusted information, smart tools, and personalized guidance
+            <br />
+            for a healthier you.
           </p>
 
-          {/* ── Search Bar ── constrained width at lg+ */}
-          <div className="relative
-            w-full           /* mobile–md : full width of container */
-            lg:w-[90%]       /* lg        : slightly narrower       */
-            xl:w-[85%]       /* xl        : more reduced            */
-            2xl:w-[80%]      /* 2xl       : balanced                */
-          ">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 sm:pl-4 pointer-events-none">
-              <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
-            </div>
-            <Input
-              type="text"
-              placeholder="Search diseases, symptoms, medicines..."
-              className="
-                w-full rounded-full bg-white text-gray-900 shadow-xl border-0
-                pl-9 pr-12 py-3.5       /* mobile  */
-                sm:pl-11 sm:pr-14 sm:py-5  /* sm   */
-                md:pl-12 md:pr-16 md:py-6  /* md   */
-                lg:py-6                    /* lg   */
-                xl:py-7                    /* xl   */
-                text-sm md:text-base
-              "
-            />
-            <div className="absolute inset-y-0 right-1.5 sm:right-2 flex items-center">
-              <Button className="
-                rounded-full p-0 bg-blue-600 hover:bg-blue-700
-                h-7 w-7        /* mobile  */
-                sm:h-9 sm:w-9  /* sm      */
-                md:h-10 md:w-10 /* md+    */
-              ">
-                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
+          {/* Search */}
+          <div className="mt-3 w-full max-w-[440px]">
+            <div className="relative">
+
+              {/* Search icon */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <Search className="h-4 w-4 text-slate-400" />
+              </div>
+
+              <Input
+                type="text"
+                placeholder="Search for diseases, symptoms, medicines, foods, exercises..."
+                className="h-9 rounded-full border-0 bg-white pl-9 pr-12 text-[9px] text-black shadow-lg placeholder:text-slate-500 sm:h-10 sm:text-[10px]"
+              />
+
+              {/* Search button */}
+              <Button
+                className="absolute right-1 top-1 h-7 w-7 rounded-full bg-blue-600 p-0 hover:bg-blue-700 sm:h-8 sm:w-8"
+              >
+                <ChevronRight className="h-4 w-4 text-white" />
               </Button>
             </div>
           </div>
-         
+
+          {/* Popular searches */}
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            <span className="text-[8px] font-bold text-blue-950 sm:text-[9px]">
+              Popular searches:
+            </span>
+
+            {popularSearches.map((search) => (
+              <button
+                key={search}
+                className="rounded-full bg-white px-2.5 py-1 text-[8px] font-semibold text-blue-700 shadow-sm transition hover:bg-blue-50 sm:text-[9px]"
+              >
+                {search}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Right information card */}
+        <div className="absolute right-5 top-3 hidden w-[205px] rounded-[18px] bg-white/95 p-2.5 shadow-xl lg:block xl:right-8 xl:w-[215px]">
+          <div className="space-y-0.5">
+            {features.map((feature) => {
+              const Icon = feature.icon;
+
+              return (
+                <div
+                  key={feature.title}
+                  className="group flex cursor-pointer items-center gap-2 rounded-xl p-2 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md"
+                >
+                  {/* Icon */}
+                  <div
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${feature.bg} transition-all duration-300 group-hover:scale-110`}
+                  >
+                    <Icon
+                      className={`h-4 w-4 ${feature.iconColor}`}
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-[8px] font-bold leading-tight text-blue-950 sm:text-[9px]">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-0.5 text-[6.5px] leading-[1.15] text-slate-500 sm:text-[7px]">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Arrow */}
+                  <ChevronRight className="h-3 w-3 shrink-0 text-blue-600 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-
     </section>
   );
 }
